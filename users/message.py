@@ -6,8 +6,8 @@ class message:
         self.img = img
 
     def __str__(self):
-        return f"[{self.type.upper()}] Código {self.code}: {self.message} (Imagen: {self.img})"
-    
+        return f"[{self.type.upper()}] Código {self.code}: {self.message}(Imagen: {self.img})"
+
     def to_dict(self):
         return {
             "tipo": self.type,

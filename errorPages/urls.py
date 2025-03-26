@@ -16,21 +16,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+
 from app.views import index
-from app.views import *
+from app.views import generar_error
+from app.views import onePage
+from app.views import buscar
+from app.views import error_logs
+from app.views import get_error_logs
 from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name="index"),
-    path('error/',generar_error,name='error'),
-    path('onepage/', onepage, name='onepage'),
+    path("", index, name='index'),
+    path('error/', generar_error,name='error'),
+    path('onePages/', onePage, name='onePage'),
     path('buscar/', buscar, name='search'),
     path('error_logs/', error_logs, name='error_logs'),
     path('api/error_logs/', get_error_logs, name='get_error_logs'),
     path('users/', include('users.urls')),
     path('productos/', include('productos.urls')),
     path('categorias/', include('categorias.urls')),
-    path('alumnos/', include('alumnos.urls')),
-    
+    path('alumnos/', include('alumnos.urls'))
 ]
